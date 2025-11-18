@@ -48,3 +48,6 @@ Thumbs.db
 *.mov
 *.wmv
 
+# Enviiroments
+.env.*.sample
+

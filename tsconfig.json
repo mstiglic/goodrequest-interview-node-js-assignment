@@ -1,25 +1,53 @@
 {
 	"compilerOptions": {
-		"lib": [
-			"es2021"
-		],
-		"module": "commonjs",
-		"outDir": "./dist",
-		"target": "es2021",
-		"esModuleInterop": true,
-		"skipLibCheck": true,
-		"noImplicitAny": true,
-		"resolveJsonModule": true,
-		"sourceMap": true,
 		"typeRoots": [
 			"node_modules/@types",
 			"./src/types"
-		]
+		],
+
+		/* === Output === */
+		"lib": ["ES2022"],
+		"outDir": "./dist",                   /* Output directory for compiled JS files */
+		"rootDir": "src",                   /* Source root */
+		"module": "ESNext",                 /* Use modern ES modules */
+		"target": "ES2022",                 /* Latest stable JS syntax */
+		"moduleResolution": "node",         /* Allow modern Node ESM resolution */
+		"esModuleInterop": true,            /* Enable default imports for CommonJS libs */
+		"forceConsistentCasingInFileNames": true,
+		"skipLibCheck": true,
+
+		/* === TypeScript strictness === */
+		"strict": true,                     /* Enable all strict type checking options */
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+
+		/* === Paths and interop === */
+		"resolveJsonModule": true,          /* Allow importing JSON files */
+		"allowSyntheticDefaultImports": true,
+		"allowJs": false,                    /* If you still have some .js files */
+		"isolatedModules": false,            /* For TSX/ESM compatibility */
+
+		/* === Node.js / ESM compatibility === */
+		"types": ["node"],                  /* Include Node.js types globally */
+		"moduleDetection": "force",
+
+		/* === Source maps === */
+		"sourceMap": true,                  /* Useful for debugging during dev */
+
+		"paths": {
+			"~api/*": ["./src/api/*"],
+			"~lib/*": ["./src/lib/*"],
+			"~configs/*": ["./src/configs/*"],
+			"~common/*": ["./src/common/*"],
+			"~utils/*": ["./src/utils/*"],
+			"~types/*": ["./src/types/*"],
+			"~db/*": ["./src/db/*"]
+		}
 	},
-	"include": [
-		"./src/**/*"
-	],
-	"exclude": [
-		"node_modules"
-	]
+
+	/* === Project structure === */
+	"include": ["./src/**/*"],
+	"exclude": ["node_modules", "dist"]
 }
