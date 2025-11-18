@@ -49,5 +49,7 @@ Thumbs.db
 *.wmv
 
 # Enviiroments
-.env.*.sample
+.env.local
+.env.prod
+.env.test
 
